@@ -1,0 +1,599 @@
+[
+    {
+        "id": "9337e17f366e7aec",
+        "type": "tab",
+        "label": "Calculadora",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "88bee94067ae99b0",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "5044181595e6afc3",
+        "type": "ui_tab",
+        "name": "Calculadora",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "db26c4032d8b45ac",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "83640b5120d4d623",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "b6ddb017f35d1c9e",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "db26c4032d8b45ac",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "83640b5120d4d623",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Small Desktop",
+                "px": 768,
+                "cols": 9
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "4d142b1f3824cd5a",
+        "type": "ui-group",
+        "name": "Group 1",
+        "page": "b6ddb017f35d1c9e",
+        "width": 4,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "ebc7a3f94173ef25",
+        "type": "ui-button",
+        "z": "9337e17f366e7aec",
+        "group": "4d142b1f3824cd5a",
+        "name": "",
+        "label": "LIMPIAR PANTALLA",
+        "order": 4,
+        "width": 4,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "payload",
+        "topicType": "msg",
+        "buttonColor": "green",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 400,
+        "y": 300,
+        "wires": [
+            [
+                "cea7fcaa697bbe8c"
+            ]
+        ]
+    },
+    {
+        "id": "7615b386b9a2d5a8",
+        "type": "ui-button",
+        "z": "9337e17f366e7aec",
+        "group": "4d142b1f3824cd5a",
+        "name": "",
+        "label": "DIVISIÓN",
+        "order": 8,
+        "width": 2,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "división",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 240,
+        "y": 240,
+        "wires": [
+            [
+                "10aa175bc4800986"
+            ]
+        ]
+    },
+    {
+        "id": "3fe7f1b80143eec3",
+        "type": "ui-button",
+        "z": "9337e17f366e7aec",
+        "group": "4d142b1f3824cd5a",
+        "name": "",
+        "label": "MULTIPLICACIÓN",
+        "order": 6,
+        "width": 2,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "multiplicación",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 270,
+        "y": 200,
+        "wires": [
+            [
+                "10aa175bc4800986"
+            ]
+        ]
+    },
+    {
+        "id": "3f956d904c80e249",
+        "type": "ui-button",
+        "z": "9337e17f366e7aec",
+        "group": "4d142b1f3824cd5a",
+        "name": "",
+        "label": "RESTA",
+        "order": 5,
+        "width": 2,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "resta",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 240,
+        "y": 160,
+        "wires": [
+            [
+                "10aa175bc4800986"
+            ]
+        ]
+    },
+    {
+        "id": "c38d5cde55722b0e",
+        "type": "ui-button",
+        "z": "9337e17f366e7aec",
+        "group": "4d142b1f3824cd5a",
+        "name": "",
+        "label": "SUMA",
+        "order": 7,
+        "width": 2,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "suma",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 230,
+        "y": 120,
+        "wires": [
+            [
+                "10aa175bc4800986"
+            ]
+        ]
+    },
+    {
+        "id": "a4036b68d3a0e99f",
+        "type": "ui-text-input",
+        "z": "9337e17f366e7aec",
+        "group": "4d142b1f3824cd5a",
+        "name": "1er valor",
+        "label": "1er valor",
+        "order": 2,
+        "width": 2,
+        "height": 0,
+        "topic": "valor1",
+        "topicType": "str",
+        "mode": "text",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": true,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 140,
+        "y": 400,
+        "wires": [
+            [
+                "c9f713ef44afd601"
+            ]
+        ]
+    },
+    {
+        "id": "7786e422c3eb1137",
+        "type": "ui-text-input",
+        "z": "9337e17f366e7aec",
+        "group": "4d142b1f3824cd5a",
+        "name": "2do valor",
+        "label": "2do valor",
+        "order": 3,
+        "width": 2,
+        "height": 0,
+        "topic": "valor2",
+        "topicType": "str",
+        "mode": "text",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": true,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 140,
+        "y": 460,
+        "wires": [
+            [
+                "96f0a197d8b307b5"
+            ]
+        ]
+    },
+    {
+        "id": "10aa175bc4800986",
+        "type": "function",
+        "z": "9337e17f366e7aec",
+        "name": "CALCULAR",
+        "func": "let a = Number(flow.get(\"valor1\"));\nlet b = Number(flow.get(\"valor2\"));\nlet resultado;\n\nswitch (msg.topic) {\n    case \"suma\":\n        resultado = a + b;\n        break;\n    case \"resta\":\n        resultado = a - b;\n        break;\n    case \"multiplicación\":\n        resultado = a * b;\n        break;\n    case \"división\":\n        resultado = b !== 0 ? a / b : \"Error: división por cero\";\n        break;\n    default:\n        resultado = \"Operación no válida\";\n}\n\nmsg.payload = resultado;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 180,
+        "wires": [
+            [
+                "cea7fcaa697bbe8c"
+            ]
+        ]
+    },
+    {
+        "id": "cea7fcaa697bbe8c",
+        "type": "ui-text",
+        "z": "9337e17f366e7aec",
+        "group": "4d142b1f3824cd5a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "resultado",
+        "label": " ",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 860,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c9f713ef44afd601",
+        "type": "change",
+        "z": "9337e17f366e7aec",
+        "name": "guardar valor 1",
+        "rules": [
+            {
+                "t": "change",
+                "p": "valor1",
+                "pt": "flow",
+                "from": "valor1",
+                "fromt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 400,
+        "wires": [
+            [
+                "43029887375415e9"
+            ]
+        ]
+    },
+    {
+        "id": "96f0a197d8b307b5",
+        "type": "change",
+        "z": "9337e17f366e7aec",
+        "name": "guardar valor 2",
+        "rules": [
+            {
+                "t": "change",
+                "p": "valor2",
+                "pt": "flow",
+                "from": "valor2",
+                "fromt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 460,
+        "wires": [
+            [
+                "300e93d2cc3b87fa"
+            ]
+        ]
+    },
+    {
+        "id": "43029887375415e9",
+        "type": "debug",
+        "z": "9337e17f366e7aec",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "300e93d2cc3b87fa",
+        "type": "debug",
+        "z": "9337e17f366e7aec",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 460,
+        "wires": []
+    }
+]

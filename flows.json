@@ -1,8 +1,8 @@
 [
     {
-        "id": "9337e17f366e7aec",
+        "id": "dac709a230677496",
         "type": "tab",
-        "label": "Calculadora",
+        "label": "Sistema de alarma",
         "disabled": false,
         "info": "",
         "env": []
@@ -152,34 +152,102 @@
         }
     },
     {
-        "id": "b6ddb017f35d1c9e",
+        "id": "dfe5f1ab34e3c72d",
+        "type": "ui_group",
+        "name": "panel",
+        "tab": "5044181595e6afc3",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d24ebb0dd36dcc53",
+        "type": "modbus-client",
+        "name": "PLC_SIM_TFG",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": 502,
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": 9600,
+        "serialDatabits": 8,
+        "serialStopbits": 1,
+        "serialParity": "none",
+        "serialConnectionDelay": 100,
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "7f80ae6de84b5afd",
+        "type": "telegram bot",
+        "botname": "MiBot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "testenvironment": false,
+        "updatemode": "polling",
+        "pollinterval": 300,
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": 6667,
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbothost": "0.0.0.0",
+        "localbotport": 8443,
+        "publicbotport": 8443,
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "68b5305d85041907",
         "type": "ui-page",
-        "name": "Page 1",
+        "name": "Panel de Control",
         "ui": "db26c4032d8b45ac",
-        "path": "/page1",
+        "path": "/inicio",
         "icon": "home",
         "layout": "grid",
         "theme": "83640b5120d4d623",
         "breakpoints": [
             {
                 "name": "Default",
-                "px": 0,
-                "cols": 3
+                "px": "0",
+                "cols": "3"
             },
             {
                 "name": "Tablet",
-                "px": 576,
-                "cols": 6
+                "px": "576",
+                "cols": "6"
             },
             {
                 "name": "Small Desktop",
-                "px": 768,
-                "cols": 9
+                "px": "768",
+                "cols": "9"
             },
             {
                 "name": "Desktop",
-                "px": 1024,
-                "cols": 12
+                "px": "1024",
+                "cols": "12"
             }
         ],
         "order": 1,
@@ -188,11 +256,11 @@
         "disabled": "false"
     },
     {
-        "id": "4d142b1f3824cd5a",
+        "id": "1363d6dacdcf63d4",
         "type": "ui-group",
-        "name": "Group 1",
-        "page": "b6ddb017f35d1c9e",
-        "width": 4,
+        "name": "Alarma General",
+        "page": "68b5305d85041907",
+        "width": 6,
         "height": 1,
         "order": 1,
         "showTitle": true,
@@ -202,298 +270,362 @@
         "groupType": "default"
     },
     {
-        "id": "ebc7a3f94173ef25",
-        "type": "ui-button",
-        "z": "9337e17f366e7aec",
-        "group": "4d142b1f3824cd5a",
-        "name": "",
-        "label": "LIMPIAR PANTALLA",
-        "order": 4,
-        "width": 4,
-        "height": 0,
-        "emulateClick": false,
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "iconPosition": "left",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "payload",
-        "topicType": "msg",
-        "buttonColor": "green",
-        "textColor": "",
-        "iconColor": "",
-        "enableClick": true,
-        "enablePointerdown": false,
-        "pointerdownPayload": "",
-        "pointerdownPayloadType": "str",
-        "enablePointerup": false,
-        "pointerupPayload": "",
-        "pointerupPayloadType": "str",
-        "x": 400,
-        "y": 300,
-        "wires": [
-            [
-                "cea7fcaa697bbe8c"
-            ]
-        ]
-    },
-    {
-        "id": "7615b386b9a2d5a8",
-        "type": "ui-button",
-        "z": "9337e17f366e7aec",
-        "group": "4d142b1f3824cd5a",
-        "name": "",
-        "label": "DIVISIÓN",
-        "order": 8,
-        "width": 2,
-        "height": 0,
-        "emulateClick": false,
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "iconPosition": "left",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "división",
-        "topicType": "str",
-        "buttonColor": "",
-        "textColor": "",
-        "iconColor": "",
-        "enableClick": true,
-        "enablePointerdown": false,
-        "pointerdownPayload": "",
-        "pointerdownPayloadType": "str",
-        "enablePointerup": false,
-        "pointerupPayload": "",
-        "pointerupPayloadType": "str",
-        "x": 240,
-        "y": 240,
-        "wires": [
-            [
-                "10aa175bc4800986"
-            ]
-        ]
-    },
-    {
-        "id": "3fe7f1b80143eec3",
-        "type": "ui-button",
-        "z": "9337e17f366e7aec",
-        "group": "4d142b1f3824cd5a",
-        "name": "",
-        "label": "MULTIPLICACIÓN",
-        "order": 6,
-        "width": 2,
-        "height": 0,
-        "emulateClick": false,
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "iconPosition": "left",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "multiplicación",
-        "topicType": "str",
-        "buttonColor": "",
-        "textColor": "",
-        "iconColor": "",
-        "enableClick": true,
-        "enablePointerdown": false,
-        "pointerdownPayload": "",
-        "pointerdownPayloadType": "str",
-        "enablePointerup": false,
-        "pointerupPayload": "",
-        "pointerupPayloadType": "str",
-        "x": 270,
-        "y": 200,
-        "wires": [
-            [
-                "10aa175bc4800986"
-            ]
-        ]
-    },
-    {
-        "id": "3f956d904c80e249",
-        "type": "ui-button",
-        "z": "9337e17f366e7aec",
-        "group": "4d142b1f3824cd5a",
-        "name": "",
-        "label": "RESTA",
-        "order": 5,
-        "width": 2,
-        "height": 0,
-        "emulateClick": false,
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "iconPosition": "left",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "resta",
-        "topicType": "str",
-        "buttonColor": "",
-        "textColor": "",
-        "iconColor": "",
-        "enableClick": true,
-        "enablePointerdown": false,
-        "pointerdownPayload": "",
-        "pointerdownPayloadType": "str",
-        "enablePointerup": false,
-        "pointerupPayload": "",
-        "pointerupPayloadType": "str",
-        "x": 240,
-        "y": 160,
-        "wires": [
-            [
-                "10aa175bc4800986"
-            ]
-        ]
-    },
-    {
-        "id": "c38d5cde55722b0e",
-        "type": "ui-button",
-        "z": "9337e17f366e7aec",
-        "group": "4d142b1f3824cd5a",
-        "name": "",
-        "label": "SUMA",
-        "order": 7,
-        "width": 2,
-        "height": 0,
-        "emulateClick": false,
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "iconPosition": "left",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "suma",
-        "topicType": "str",
-        "buttonColor": "",
-        "textColor": "",
-        "iconColor": "",
-        "enableClick": true,
-        "enablePointerdown": false,
-        "pointerdownPayload": "",
-        "pointerdownPayloadType": "str",
-        "enablePointerup": false,
-        "pointerupPayload": "",
-        "pointerupPayloadType": "str",
-        "x": 230,
-        "y": 120,
-        "wires": [
-            [
-                "10aa175bc4800986"
-            ]
-        ]
-    },
-    {
-        "id": "a4036b68d3a0e99f",
-        "type": "ui-text-input",
-        "z": "9337e17f366e7aec",
-        "group": "4d142b1f3824cd5a",
-        "name": "1er valor",
-        "label": "1er valor",
+        "id": "f3eeab8b864fa24b",
+        "type": "ui-page",
+        "name": "Descarga",
+        "ui": "db26c4032d8b45ac",
+        "path": "/page2",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "83640b5120d4d623",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
         "order": 2,
-        "width": 2,
-        "height": 0,
-        "topic": "valor1",
-        "topicType": "str",
-        "mode": "text",
-        "tooltip": "",
-        "delay": 300,
-        "passthru": true,
-        "sendOnDelay": false,
-        "sendOnBlur": true,
-        "sendOnEnter": true,
         "className": "",
-        "clearable": false,
-        "sendOnClear": false,
-        "icon": "",
-        "iconPosition": "left",
-        "iconInnerPosition": "inside",
-        "x": 140,
-        "y": 400,
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "53ddc9264723bb0a",
+        "type": "ui-group",
+        "name": "Zona de descarga",
+        "page": "f3eeab8b864fa24b",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "2118c22d23c19838",
+        "type": "modbus-read",
+        "z": "dac709a230677496",
+        "name": "Leer Sensores y Estado",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": true,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "0",
+        "quantity": "5",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "enableDeformedMessages": true,
+        "startDelayTime": "",
+        "server": "d24ebb0dd36dcc53",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 240,
+        "y": 320,
         "wires": [
             [
-                "c9f713ef44afd601"
-            ]
+                "83b0dbda51de1247",
+                "5b828fd660a17622",
+                "15bd792695225feb",
+                "085024699f25349b",
+                "cf3e9634f1e1717b"
+            ],
+            []
         ]
     },
     {
-        "id": "7786e422c3eb1137",
-        "type": "ui-text-input",
-        "z": "9337e17f366e7aec",
-        "group": "4d142b1f3824cd5a",
-        "name": "2do valor",
-        "label": "2do valor",
-        "order": 3,
-        "width": 2,
-        "height": 0,
-        "topic": "valor2",
-        "topicType": "str",
-        "mode": "text",
-        "tooltip": "",
-        "delay": 300,
-        "passthru": true,
-        "sendOnDelay": false,
-        "sendOnBlur": true,
-        "sendOnEnter": true,
-        "className": "",
-        "clearable": false,
-        "sendOnClear": false,
-        "icon": "",
-        "iconPosition": "left",
-        "iconInnerPosition": "inside",
-        "x": 140,
-        "y": 460,
-        "wires": [
-            [
-                "96f0a197d8b307b5"
-            ]
-        ]
-    },
-    {
-        "id": "10aa175bc4800986",
+        "id": "5b828fd660a17622",
         "type": "function",
-        "z": "9337e17f366e7aec",
-        "name": "CALCULAR",
-        "func": "let a = Number(flow.get(\"valor1\"));\nlet b = Number(flow.get(\"valor2\"));\nlet resultado;\n\nswitch (msg.topic) {\n    case \"suma\":\n        resultado = a + b;\n        break;\n    case \"resta\":\n        resultado = a - b;\n        break;\n    case \"multiplicación\":\n        resultado = a * b;\n        break;\n    case \"división\":\n        resultado = b !== 0 ? a / b : \"Error: división por cero\";\n        break;\n    default:\n        resultado = \"Operación no válida\";\n}\n\nmsg.payload = resultado;\nreturn msg;",
+        "z": "dac709a230677496",
+        "name": "Lógica de Intrusion Central",
+        "func": "// --- 1. Lectura de variables globales ---\nconst armado = global.get(\"val_registro_0\") || 0;\nconst s1 = global.get(\"val_registro_1\") || 0;\nconst s2 = global.get(\"val_registro_4\") || 0;\n\n// --- 2. Lógica de Alerta Unificada ---\nlet valorSirena = 0;\nlet mensajeTelegram = null;\nlet zonaDetectada = \"\";\n\nif (armado === 1) {\n    if (s1 === 1) zonaDetectada = \"Puerta Principal (Z1)\";\n    if (s2 === 1) zonaDetectada = (zonaDetectada === \"\") ? \"Célula Robótica (Z2)\" : \"Z1 y Z2\";\n\n    if (zonaDetectada !== \"\") {\n        valorSirena = 1;\n        mensajeTelegram = {\n            payload: {\n                chatId: 643121614,\n                type: 'message',\n                content: `🚨 ALERTA DE SEGURIDAD: Intrusión detectada en ${zonaDetectada}. Sirena activa.`\n            }\n        };\n    }\n}\n\n// --- 3. Paquete para escribir en el Registro 2 (Sirena) ---\nconst ordenPLC = {\n    value: valorSirena,\n    fc: 6,\n    unitid: 1,\n    address: 2,\n    quantity: 1\n};\n\nreturn [mensajeTelegram, { payload: ordenPLC }];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 320,
+        "wires": [
+            [
+                "96753cc38a15b691",
+                "4eeaa34e1520e57f"
+            ],
+            [
+                "ee9adb7b3937540e",
+                "0a2e29cbd4296009"
+            ]
+        ]
+    },
+    {
+        "id": "96753cc38a15b691",
+        "type": "debug",
+        "z": "dac709a230677496",
+        "name": "Notificaciones",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "ee9adb7b3937540e",
+        "type": "debug",
+        "z": "dac709a230677496",
+        "name": "debug escritura",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "83b0dbda51de1247",
+        "type": "debug",
+        "z": "dac709a230677496",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "12be010924a259ce",
+        "type": "modbus-flex-write",
+        "z": "dac709a230677496",
+        "name": "PLC salida",
+        "showStatusActivities": false,
+        "showErrors": true,
+        "showWarnings": true,
+        "server": "d24ebb0dd36dcc53",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 590,
+        "y": 60,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f76d38d508255a71",
+        "type": "function",
+        "z": "dac709a230677496",
+        "name": "function 1",
+        "func": "var fc = 16;             // Write Multiple Registers\nvar sa = 40002;              // 0 = primer holding register (40001)\nvar addresses = 1;       // cantidad de registros\nvar value = 1;           // valor a escribir\n\nvar buf = Buffer.alloc(addresses * 2);\nbuf.writeInt16BE(value, 0);\n\nvar values = [];\nfor (var i = 0; i < buf.length; i += 2) {\n    values.push(buf.readInt16BE(i));\n}\n\nmsg.slave_ip = \"127.0.0.1\";\nmsg.payload = {\n    value: values,\n    fc: fc,\n    unitid: 1,\n    address: sa,\n    quantity: addresses\n};\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 630,
-        "y": 180,
+        "x": 420,
+        "y": 60,
         "wires": [
             [
-                "cea7fcaa697bbe8c"
+                "12be010924a259ce"
             ]
         ]
     },
     {
-        "id": "cea7fcaa697bbe8c",
-        "type": "ui-text",
-        "z": "9337e17f366e7aec",
-        "group": "4d142b1f3824cd5a",
-        "order": 1,
+        "id": "8d9e7fcb7729a67d",
+        "type": "inject",
+        "z": "dac709a230677496",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 60,
+        "wires": [
+            [
+                "f76d38d508255a71"
+            ]
+        ]
+    },
+    {
+        "id": "0a2e29cbd4296009",
+        "type": "modbus-flex-write",
+        "z": "dac709a230677496",
+        "name": "alarma",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "server": "d24ebb0dd36dcc53",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 930,
+        "y": 360,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4eeaa34e1520e57f",
+        "type": "telegram sender",
+        "z": "dac709a230677496",
+        "name": "",
+        "bot": "7f80ae6de84b5afd",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1330,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dee5b1e1f528ee15",
+        "type": "ui-switch",
+        "z": "dac709a230677496",
+        "name": "Alarma",
+        "label": "Activar alarma",
+        "group": "1363d6dacdcf63d4",
+        "order": 6,
         "width": 0,
         "height": 0,
-        "name": "resultado",
-        "label": " ",
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "x": 640,
+        "y": 500,
+        "wires": [
+            [
+                "2657e3875aac8665"
+            ]
+        ]
+    },
+    {
+        "id": "2657e3875aac8665",
+        "type": "modbus-write",
+        "z": "dac709a230677496",
+        "name": "activar alarma",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "0",
+        "quantity": "1",
+        "server": "d24ebb0dd36dcc53",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 880,
+        "y": 500,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "786bf5c025bb8615",
+        "type": "function",
+        "z": "dac709a230677496",
+        "name": "estado sirena texto",
+        "func": "\n// --- 1. Seguridad: Verificar que llegan datos ---\nif (!msg.responseBuffer || !msg.responseBuffer.buffer) return null;\nconst rawBuffer = Buffer.from(msg.responseBuffer.buffer);\n\n// Seguridad extra: Si el buffer es muy corto, no leemos para evitar error\nif (rawBuffer.length < 6) return null;\n\n// --- 2. EL CAMBIO CLAVE ---\n// Leemos en el byte 4 (que corresponde al inicio del 3er registro/Sirena)\nvar estadoSirena = rawBuffer.readUInt16BE(4);\n\n// --- 3. Lógica Visual ---\nif (estadoSirena === 1) {\n    msg.payload = \"🚨 PELIGRO - SIRENA SONANDO\";\n    msg.color = \"red\";   // Esto pondrá el texto rojo si usas un nodo Text\n} else {\n    msg.payload = \"✅ TRANQUILO - SISTEMA OK\";\n    msg.color = \"green\"; // Esto pondrá el texto verde\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 760,
+        "wires": [
+            [
+                "58d55f5458ee6180",
+                "a4e04cef0f372a90"
+            ]
+        ]
+    },
+    {
+        "id": "58d55f5458ee6180",
+        "type": "ui-text",
+        "z": "dac709a230677496",
+        "group": "1363d6dacdcf63d4",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "estado actual",
+        "label": "Estado actual",
         "format": "{{msg.payload}}",
-        "layout": "col-center",
+        "layout": "row-center",
         "style": false,
         "font": "",
         "fontSize": 16,
@@ -502,98 +634,1439 @@
         "className": "",
         "value": "payload",
         "valueType": "msg",
-        "x": 860,
-        "y": 200,
+        "x": 1250,
+        "y": 740,
         "wires": []
     },
     {
-        "id": "c9f713ef44afd601",
-        "type": "change",
-        "z": "9337e17f366e7aec",
-        "name": "guardar valor 1",
-        "rules": [
-            {
-                "t": "change",
-                "p": "valor1",
-                "pt": "flow",
-                "from": "valor1",
-                "fromt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 360,
-        "y": 400,
-        "wires": [
-            [
-                "43029887375415e9"
-            ]
-        ]
-    },
-    {
-        "id": "96f0a197d8b307b5",
-        "type": "change",
-        "z": "9337e17f366e7aec",
-        "name": "guardar valor 2",
-        "rules": [
-            {
-                "t": "change",
-                "p": "valor2",
-                "pt": "flow",
-                "from": "valor2",
-                "fromt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 360,
-        "y": 460,
-        "wires": [
-            [
-                "300e93d2cc3b87fa"
-            ]
-        ]
-    },
-    {
-        "id": "43029887375415e9",
+        "id": "a4e04cef0f372a90",
         "type": "debug",
-        "z": "9337e17f366e7aec",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 560,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "300e93d2cc3b87fa",
-        "type": "debug",
-        "z": "9337e17f366e7aec",
+        "z": "dac709a230677496",
         "name": "debug 2",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 580,
-        "y": 460,
+        "x": 1240,
+        "y": 800,
         "wires": []
+    },
+    {
+        "id": "672bf1fefd7644fb",
+        "type": "modbus-read",
+        "z": "dac709a230677496",
+        "name": "Leer Alarma",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": true,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "0",
+        "quantity": "3",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "enableDeformedMessages": true,
+        "startDelayTime": "",
+        "server": "d24ebb0dd36dcc53",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 770,
+        "y": 760,
+        "wires": [
+            [
+                "786bf5c025bb8615"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "57ff284c66ca1b72",
+        "type": "ui-chart",
+        "z": "dac709a230677496",
+        "group": "1363d6dacdcf63d4",
+        "name": "",
+        "label": "Historial de movimientos",
+        "order": 7,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "1",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": "2",
+        "removeOlderUnit": "60",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "step",
+        "x": 1350,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "be356e0e9068eab9",
+        "type": "status",
+        "z": "dac709a230677496",
+        "name": "",
+        "scope": [
+            "2118c22d23c19838"
+        ],
+        "x": 1000,
+        "y": 120,
+        "wires": [
+            [
+                "4fb19441ac106240"
+            ]
+        ]
+    },
+    {
+        "id": "4fb19441ac106240",
+        "type": "function",
+        "z": "dac709a230677496",
+        "name": "semáforo",
+        "func": "// El nodo Status nos envía información sobre el color del puntito del nodo Modbus\n// msg.status.fill puede ser \"green\", \"red\", \"yellow\" o \"grey\"\n\nvar estado = msg.status;\n\nif (estado && (estado.fill === \"green\" || estado.text.includes(\"active\"))) {\n    // Si el punto es verde o dice \"active\"\n    msg.payload = \"🟢 CONEXIÓN ESTABLE\";\n    msg.color = \"green\"; // Texto verde en el dashboard\n} else {\n    // Si es rojo, amarillo o gris (desconectado)\n    msg.payload = \"🔴 ERROR DE CONEXIÓN PLC\";\n    msg.color = \"red\";   // Texto rojo y llamativo\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 120,
+        "wires": [
+            [
+                "0623cc3d8aa2f0a0"
+            ]
+        ]
+    },
+    {
+        "id": "0623cc3d8aa2f0a0",
+        "type": "ui-text",
+        "z": "dac709a230677496",
+        "group": "1363d6dacdcf63d4",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "control plc",
+        "label": "Estado del PLC",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "Arial Black,Arial Black,Gadget,sans-serif",
+        "fontSize": "21",
+        "color": "#000000",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1350,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "15bd792695225feb",
+        "type": "function",
+        "z": "dac709a230677496",
+        "name": "Estado Sensor Visual",
+        "func": "// 1. Seguridad básica\nif (!msg.responseBuffer || !msg.responseBuffer.buffer) return null;\nconst rawBuffer = Buffer.from(msg.responseBuffer.buffer);\n\n// 2. Mapeo de Registros (Offset de 2 bytes)\nvar estadoSistema = rawBuffer.readUInt16BE(0); // Reg 0: Alarma\nvar sensorActivo = rawBuffer.readUInt16BE(2); // Reg 1: Sensor 1\nvar reg2_sirena = rawBuffer.readUInt16BE(4); // Reg 2: Sirena\nvar r3 = rawBuffer.readUInt16BE(6); // Reg 3: Apertura\nvar reg4_sensor2 = rawBuffer.readUInt16BE(8); // Reg 4: Sensor 2\n\n// 3. Guardar en memoria global para otros nodos\nglobal.set(\"val_registro_0\", estadoSistema);\nglobal.set(\"val_registro_1\", sensorActivo);\nglobal.set(\"val_registro_2\", reg2_sirena);\nglobal.set(\"val_registro_3\", r3);\nglobal.set(\"val_registro_4\", reg4_sensor2);\n\n// 4. Lógica visual para el Dashboard\nif (sensorActivo === 1 || reg4_sensor2 === 1) {\n    let zona = (sensorActivo === 1) ? \"ZONA 1\" : \"ZONA 2\";\n    if (sensorActivo === 1 && reg4_sensor2 === 1) zona = \"ZONAS 1 y 2\";\n\n    msg.payload = `🚨 INTRUSIÓN: ${zona}`;\n    msg.color = \"white\";\n    msg.background = \"red\";\n} else {\n    msg.payload = \"✅ Sistema Despejado\";\n    msg.color = \"grey\";\n    msg.background = \"white\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 200,
+        "wires": [
+            [
+                "ca7058d9296fb60c",
+                "88b1fb2e052978a3"
+            ]
+        ]
+    },
+    {
+        "id": "ca7058d9296fb60c",
+        "type": "ui-text",
+        "z": "dac709a230677496",
+        "group": "1363d6dacdcf63d4",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "sensor",
+        "label": "Monitorización de accesos:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 830,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "085024699f25349b",
+        "type": "function",
+        "z": "dac709a230677496",
+        "name": "datos para gráfica",
+        "func": "if (!msg.responseBuffer || !msg.responseBuffer.buffer) return null;\nconst rawBuffer = Buffer.from(msg.responseBuffer.buffer);\n\n// 1. Leemos los dos sensores\nvar s1 = rawBuffer.readUInt16BE(2); // Registro 1\nvar s2 = rawBuffer.readUInt16BE(8); // Registro 4\n\n// 2. Enviamos los dos mensajes de forma explícita\nnode.send({ payload: s1, topic: \"Puerta Principal\" });\nnode.send({ payload: s2, topic: \"Célula Robótica\" });\n\n// 3. Importante: no devolvemos nada para evitar el mensaje vacío\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 180,
+        "wires": [
+            [
+                "57ff284c66ca1b72"
+            ]
+        ]
+    },
+    {
+        "id": "88b1fb2e052978a3",
+        "type": "function",
+        "z": "dac709a230677496",
+        "name": "formato base de datos",
+        "func": "var estadoAnterior = context.get('estadoAnterior') || false;\nvar tiempoInicio = context.get('tiempoInicio') || 0;\n\nvar texto = msg.payload.toString().toUpperCase();\nvar hayIntrusion = texto.includes(\"🚨\") || texto.includes(\"INTRUSIÓN\");\n\nvar ahora = new Date();\nvar lineaCSV = null;\n\nif (hayIntrusion && !estadoAnterior) {\n    context.set('tiempoInicio', ahora.getTime());\n    lineaCSV = `${ahora.toLocaleDateString()};${ahora.toLocaleTimeString()};🔴 INICIO: ${texto};-\\n`;\n}\nelse if (!hayIntrusion && estadoAnterior) {\n    var duracionSeg = ((ahora.getTime() - tiempoInicio) / 1000).toFixed(1);\n    lineaCSV = `${ahora.toLocaleDateString()};${ahora.toLocaleTimeString()};🟢 SISTEMA DESPEJADO;Duración: ${duracionSeg} s\\n`;\n}\n\ncontext.set('estadoAnterior', hayIntrusion);\n\nif (lineaCSV) {\n    msg.payload = lineaCSV;\n    return msg;\n} else {\n    return null;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 60,
+        "wires": [
+            [
+                "ac4b9364278bd2a6"
+            ]
+        ]
+    },
+    {
+        "id": "ac4b9364278bd2a6",
+        "type": "file",
+        "z": "dac709a230677496",
+        "name": "",
+        "filename": "C:\\Users\\pardo\\Desktop\\tfg\\registro.csv",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1200,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2e56a89326857f70",
+        "type": "ui-text-input",
+        "z": "dac709a230677496",
+        "group": "1363d6dacdcf63d4",
+        "name": "Pin",
+        "label": "Pin de seguridad",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "topic": "pin",
+        "topicType": "msg",
+        "mode": "password",
+        "tooltip": "",
+        "delay": "0",
+        "passthru": true,
+        "sendOnDelay": true,
+        "sendOnBlur": true,
+        "sendOnEnter": false,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 150,
+        "y": 1020,
+        "wires": [
+            [
+                "bf8a05cb4581b9f6"
+            ]
+        ]
+    },
+    {
+        "id": "dfb3f4a8f8d7bd7e",
+        "type": "ui-button",
+        "z": "dac709a230677496",
+        "group": "1363d6dacdcf63d4",
+        "name": "descarga historial",
+        "label": "Descargar Historial",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 210,
+        "y": 920,
+        "wires": [
+            [
+                "904bd11a679d148f",
+                "9d1f80a8835b2767"
+            ]
+        ]
+    },
+    {
+        "id": "904bd11a679d148f",
+        "type": "function",
+        "z": "dac709a230677496",
+        "name": "function 2",
+        "func": "// Recuperamos el PIN que escribiste\nvar pinRecibido = flow.get(\"pinIngresado\");\nvar pinCorrecto = \"1234\"; // Tu contraseña\n\n\nif (pinRecibido === pinCorrecto) {\n    // CASO 1: ÉXITO\n    return [{ payload: \"Contraseña Correcta\" }, null];\n} else {\n    // CASO 2: FALLO\n    // Enviamos \"RESET\" al template para ocultar el botón verde\n    // Enviamos el mensaje de error a la notificación\n    return [{ payload: \"Contraseña Incorrecta\" }, { payload: \"⛔ PIN INCORRECTO\" }];\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 920,
+        "wires": [
+            [
+                "409914493560446c",
+                "0fc287e4e2c7cc1a"
+            ]
+        ]
+    },
+    {
+        "id": "cfb265d7baca8b92",
+        "type": "ui-notification",
+        "z": "dac709a230677496",
+        "ui": "db26c4032d8b45ac",
+        "position": "top center",
+        "colorDefault": true,
+        "color": "#000000",
+        "displayTime": "3",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "allowConfirm": false,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "",
+        "name": "",
+        "x": 1100,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bf8a05cb4581b9f6",
+        "type": "change",
+        "z": "dac709a230677496",
+        "name": "GUARDAR PIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "pinIngresado",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "409914493560446c",
+        "type": "ui-notification",
+        "z": "dac709a230677496",
+        "ui": "db26c4032d8b45ac",
+        "position": "top center",
+        "colorDefault": true,
+        "color": "#000000",
+        "displayTime": "3",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "allowConfirm": false,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "",
+        "name": "",
+        "x": 860,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9d1f80a8835b2767",
+        "type": "change",
+        "z": "dac709a230677496",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 960,
+        "wires": [
+            [
+                "2e56a89326857f70"
+            ]
+        ]
+    },
+    {
+        "id": "c3e16d6cc46e6171",
+        "type": "ui-control",
+        "z": "dac709a230677496",
+        "name": "",
+        "ui": "db26c4032d8b45ac",
+        "events": "all",
+        "x": 1340,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c3e4b7ee5827cbef",
+        "type": "ui-template",
+        "z": "dac709a230677496",
+        "group": "53ddc9264723bb0a",
+        "page": "",
+        "ui": "",
+        "name": "boton descarga",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<div ng-if=\"msg.payload === 'OK'\"\n    style=\"text-align: center; padding: 15px; border: 2px solid #4CAF50; background-color: #e8f5e9; border-radius: 8px;\">\n\n    <h3 style=\"color: #2e7d32; margin: 0;\">✅ PIN CORRECTO</h3>\n    <p>Acceso autorizado.</p>\n\n    <!-- Añadimos ng-click para avisar a Node-RED -->\n    <a href=\"/historial\" target=\"_blank\" style=\"text-decoration: none;\" ng-click=\"send({payload: 'update'})\">\n        <button style=\"\n            background-color: #008CBA; \n            color: white; \n            padding: 12px 20px; \n            font-size: 16px; \n            font-weight: bold; \n            border: none; \n            border-radius: 5px; \n            cursor: pointer;\n            margin-top: 10px;\">\n            📥 DESCARGAR EXCEL\n        </button>\n    </a>\n</div>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 200,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1a5384e2c853faef",
+        "type": "change",
+        "z": "dac709a230677496",
+        "name": "cambio página",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"tab\": \"Descarga\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1100,
+        "y": 940,
+        "wires": [
+            [
+                "c3e16d6cc46e6171"
+            ]
+        ]
+    },
+    {
+        "id": "3fe008e6f65c4edf",
+        "type": "http response",
+        "z": "dac709a230677496",
+        "name": "",
+        "statusCode": "",
+        "headers": {
+            "Content-Disposition": "attachment; filename=historial.csv"
+        },
+        "x": 1110,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "bbfdc8a161423743",
+        "type": "change",
+        "z": "dac709a230677496",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "headers",
+                "pt": "msg",
+                "to": "{     \"Content-Type\": \"text/csv\",     \"Content-Disposition\": \"attachment; filename=registro_alarma.csv\" }",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 860,
+        "wires": [
+            [
+                "3fe008e6f65c4edf"
+            ]
+        ]
+    },
+    {
+        "id": "a974d2d2623a7a0e",
+        "type": "file in",
+        "z": "dac709a230677496",
+        "name": "",
+        "filename": "C:\\Users\\pardo\\Desktop\\tfg\\registro.csv",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 480,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "db12f6c428c9d0ba",
+        "type": "http in",
+        "z": "dac709a230677496",
+        "name": "",
+        "url": "/historial",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 210,
+        "y": 860,
+        "wires": [
+            [
+                "a974d2d2623a7a0e",
+                "7f5d8ac3148e7d07"
+            ]
+        ]
+    },
+    {
+        "id": "4610d5ade23c556b",
+        "type": "http request",
+        "z": "dac709a230677496",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "http://localhost:1880/historial",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1350,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1444d96a775c21f9",
+        "type": "function",
+        "z": "dac709a230677496",
+        "name": "Ir al inicio al conectar",
+        "func": "// El nodo ui_control envía \"connect\" cuando abres la web\nif (msg.payload === \"connect\") {\n    // Si es una conexión nueva, forzamos ir a la pestaña principal\n    // IMPORTANTE: Pon aquí el nombre EXACTO de tu pestaña principal\n    msg.payload = { tab: \"Panel de Control\" }; \n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 1100,
+        "wires": [
+            [
+                "c2e6961edd412de3"
+            ]
+        ]
+    },
+    {
+        "id": "c2e6961edd412de3",
+        "type": "ui-control",
+        "z": "dac709a230677496",
+        "name": "",
+        "ui": "db26c4032d8b45ac",
+        "events": "all",
+        "x": 840,
+        "y": 1160,
+        "wires": [
+            [
+                "1444d96a775c21f9"
+            ]
+        ]
+    },
+    {
+        "id": "0fc287e4e2c7cc1a",
+        "type": "switch",
+        "z": "dac709a230677496",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Contraseña Correcta",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Contraseña Incorrecta",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 870,
+        "y": 940,
+        "wires": [
+            [
+                "1a5384e2c853faef"
+            ],
+            [
+                "cfb265d7baca8b92"
+            ]
+        ]
+    },
+    {
+        "id": "f602cc74929d262e",
+        "type": "change",
+        "z": "dac709a230677496",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"tab\": \"Panel de Control\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 1120,
+        "wires": [
+            [
+                "c2e6961edd412de3"
+            ]
+        ]
+    },
+    {
+        "id": "34f412e506a0d743",
+        "type": "ui-button",
+        "z": "dac709a230677496",
+        "group": "53ddc9264723bb0a",
+        "name": "volver a página principal",
+        "label": "Volver al inicio",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 190,
+        "y": 1120,
+        "wires": [
+            [
+                "f602cc74929d262e"
+            ]
+        ]
+    },
+    {
+        "id": "cf3e9634f1e1717b",
+        "type": "function",
+        "z": "dac709a230677496",
+        "name": "extraer estado alarma",
+        "func": "// El nodo Modbus Read devuelve un array, ej: [1, 0, 0]\n// Cogemos solo la primera posición (Register 0)\nmsg.payload = msg.payload[0];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 420,
+        "wires": [
+            [
+                "68dddec572ca7497"
+            ]
+        ]
+    },
+    {
+        "id": "2a73e569b7fd0ccd",
+        "type": "telegram receiver",
+        "z": "dac709a230677496",
+        "name": "",
+        "bot": "7f80ae6de84b5afd",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "hasinput": false,
+        "inputs": 0,
+        "handleallupdates": false,
+        "x": 150,
+        "y": 800,
+        "wires": [
+            [
+                "394c6e06d0751d77"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "394c6e06d0751d77",
+        "type": "switch",
+        "z": "dac709a230677496",
+        "name": "",
+        "property": "payload.content",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Activar",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Desactivar",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Estado",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 210,
+        "y": 620,
+        "wires": [
+            [
+                "6d0fd84b4b5d6ebc",
+                "7714b85b55167709"
+            ],
+            [
+                "906ddbed899b6fac",
+                "6d0071f241f2d7cb"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6d0fd84b4b5d6ebc",
+        "type": "change",
+        "z": "dac709a230677496",
+        "name": "Poner a ON",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 580,
+        "wires": [
+            [
+                "dee5b1e1f528ee15",
+                "2657e3875aac8665"
+            ]
+        ]
+    },
+    {
+        "id": "906ddbed899b6fac",
+        "type": "change",
+        "z": "dac709a230677496",
+        "name": "Poner a OFF",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 620,
+        "wires": [
+            [
+                "dee5b1e1f528ee15",
+                "2657e3875aac8665"
+            ]
+        ]
+    },
+    {
+        "id": "7714b85b55167709",
+        "type": "function",
+        "z": "dac709a230677496",
+        "name": "function 3",
+        "func": "// Definimos el mensaje\nmsg.payload = {\n    chatId: 643121614,  // Tu ID fijo (esto está bien para tu TFG)\n    type: 'message',\n    content: \"✅ Alarma ACTIVADA remotamente\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 680,
+        "wires": [
+            [
+                "4eeaa34e1520e57f"
+            ]
+        ]
+    },
+    {
+        "id": "6d0071f241f2d7cb",
+        "type": "function",
+        "z": "dac709a230677496",
+        "name": "function 4",
+        "func": "// Definimos el mensaje\nmsg.payload = {\n    chatId: 643121614,  // Tu ID fijo (esto está bien para tu TFG)\n    type: 'message',\n    content: \"⛔ Alarma DESACTIVADA remotamente\"\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 740,
+        "wires": [
+            [
+                "4eeaa34e1520e57f"
+            ]
+        ]
+    },
+    {
+        "id": "68dddec572ca7497",
+        "type": "rbe",
+        "z": "dac709a230677496",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 230,
+        "y": 500,
+        "wires": [
+            [
+                "dee5b1e1f528ee15"
+            ]
+        ]
+    },
+    {
+        "id": "54fc63fb591f551d",
+        "type": "http in",
+        "z": "dac709a230677496",
+        "name": "abrir",
+        "url": "/abrir",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 1260,
+        "wires": [
+            [
+                "051b8eb374811236"
+            ]
+        ]
+    },
+    {
+        "id": "051b8eb374811236",
+        "type": "change",
+        "z": "dac709a230677496",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 1260,
+        "wires": [
+            [
+                "37ddcf71bc8ac335",
+                "f3b04a85d7207762"
+            ]
+        ]
+    },
+    {
+        "id": "eed032409c1459a7",
+        "type": "modbus-write",
+        "z": "dac709a230677496",
+        "name": "abrir puerta",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "HoldingRegister",
+        "adr": "3",
+        "quantity": "1",
+        "server": "d24ebb0dd36dcc53",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 950,
+        "y": 1280,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "536c64122ed016f4",
+        "type": "http in",
+        "z": "dac709a230677496",
+        "name": "armar",
+        "url": "/armar",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 1360,
+        "wires": [
+            [
+                "7b58f8c2fcddbcb0"
+            ]
+        ]
+    },
+    {
+        "id": "d0bf61358efb0623",
+        "type": "change",
+        "z": "dac709a230677496",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8cae78f3dc8d9705",
+        "type": "modbus-write",
+        "z": "dac709a230677496",
+        "name": "activar alarma",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "0",
+        "quantity": "1",
+        "server": "d24ebb0dd36dcc53",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 620,
+        "y": 1380,
+        "wires": [
+            [
+                "7535f3012d318377"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "950b2d01c424c31a",
+        "type": "http in",
+        "z": "dac709a230677496",
+        "name": "desarmar",
+        "url": "/desarmar",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 1460,
+        "wires": [
+            [
+                "47e7657f3ed4b807"
+            ]
+        ]
+    },
+    {
+        "id": "7f826a08212d2d92",
+        "type": "change",
+        "z": "dac709a230677496",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1100,
+        "y": 1460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f3fc6c3aee0f15bc",
+        "type": "modbus-write",
+        "z": "dac709a230677496",
+        "name": "desactivar alarma",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "HoldingRegister",
+        "adr": "0",
+        "quantity": "1",
+        "server": "d24ebb0dd36dcc53",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 630,
+        "y": 1480,
+        "wires": [
+            [
+                "492aa3e613d50799"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "893bc22bf850804f",
+        "type": "csv",
+        "z": "dac709a230677496",
+        "name": "",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 650,
+        "y": 800,
+        "wires": [
+            [
+                "050dda36b30bc7d2"
+            ]
+        ]
+    },
+    {
+        "id": "050dda36b30bc7d2",
+        "type": "http response",
+        "z": "dac709a230677496",
+        "name": "Enviar a la app",
+        "statusCode": "",
+        "headers": {},
+        "x": 820,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "7f5d8ac3148e7d07",
+        "type": "file in",
+        "z": "dac709a230677496",
+        "name": "",
+        "filename": "C:\\Users\\pardo\\Desktop\\tfg\\registro.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 400,
+        "y": 820,
+        "wires": [
+            [
+                "893bc22bf850804f"
+            ]
+        ]
+    },
+    {
+        "id": "35b2ef031f3cddc2",
+        "type": "http in",
+        "z": "dac709a230677496",
+        "name": "",
+        "url": "/estado-sensores",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 220,
+        "y": 1540,
+        "wires": [
+            [
+                "de9aa37de2b9054d"
+            ]
+        ]
+    },
+    {
+        "id": "de9aa37de2b9054d",
+        "type": "function",
+        "z": "dac709a230677496",
+        "name": "mapear sensores",
+        "func": "let alarmaArmada = global.get(\"val_registro_0\") || 0; // Registro 0\nlet sensor1 = global.get(\"val_registro_1\") || 0; // Registro 1 (Ultrasonidos)\nlet sirena = global.get(\"val_registro_2\") || 0; // Registro 2\nlet sensor2 = global.get(\"val_registro_4\") || 0; // Registro 4 (Pin 14)\n\nmsg.payload = [\n    {\n        \"name\": \"Puerta Principal\",\n        \"status\": sensor1 === 0 ? \"Cerrada\" : \"¡MOVIMIENTO!\",\n        \"icon\": \"sensor_door\",\n        \"color\": sensor1 === 0 ? \"verde\" : \"rojo\"\n    },\n    {\n        \"name\": \"Célula Robótica\",\n        \"status\": sensor2 === 0 ? \"Segura\" : \"¡ABIERTA!\",\n        \"icon\": \"precision_manufacturing\",\n        \"color\": sensor2 === 0 ? \"verde\" : \"rojo\"\n    },\n    {\n        \"name\": \"Estado Alarma\",\n        \"status\": alarmaArmada === 1 ? \"ARMADA\" : \"Desarmada\",\n        \"icon\": alarmaArmada === 1 ? \"security\" : \"lock_open\",\n        \"color\": alarmaArmada === 1 ? \"azul\" : \"gris\"\n    },\n    {\n        \"name\": \"Sirena Local\",\n        \"status\": sirena === 1 ? \"ACTIVA\" : \"Silencio\",\n        \"icon\": \"notifications_active\",\n        \"color\": sirena === 1 ? \"rojo\" : \"gris\"\n    }\n];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 1540,
+        "wires": [
+            [
+                "06fce557d85b81e8"
+            ]
+        ]
+    },
+    {
+        "id": "06fce557d85b81e8",
+        "type": "http response",
+        "z": "dac709a230677496",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 650,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "aae3fb8b5bd230ec",
+        "type": "http in",
+        "z": "dac709a230677496",
+        "name": "cerradura",
+        "url": "/control-cerradura",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 200,
+        "y": 1620,
+        "wires": [
+            [
+                "8545c54bfabd4ba6"
+            ]
+        ]
+    },
+    {
+        "id": "8545c54bfabd4ba6",
+        "type": "function",
+        "z": "dac709a230677496",
+        "name": "lógica cerradura",
+        "func": "let accion = parseInt(msg.payload.accion);\n\n// 2. Consultamos el estado de PELIGRO (Registro 3) en la memoria global\n// Usamos el nombre que definimos en el nodo de mapeo anterior\nlet peligroActivo = global.get(\"val_registro_2\") || 0; // Registro 3 (Peligro)\n\n// 3. VALIDACIÓN DE SEGURIDAD (Interbloqueo)\n// Si el usuario intenta abrir (1) pero la alarma está disparada (1), bloqueamos la orden.\nif (accion === 1 && peligroActivo === 1) {\n    // Enviamos una alerta al log de Node-RED\n    node.warn(\"BLOQUEO DE SEGURIDAD: No se puede abrir la cerradura mientras la alarma está activa.\");\n    \n    // Devolvemos un mensaje de error para la App (Salida 1) y anulamos el envío a Modbus\n    msg.payload = { \n        status: \"error\", \n        message: \"Acceso denegado: Alarma en curso\" \n    };\n    return [msg, null]; \n}\n\n// 4. Si es seguro, preparamos el paquete para Modbus-Flex-Write\n// Escribimos en la dirección 3 (que corresponde al Registro 4 en ModbusPal)\nconst ordenModbus = {\n    value: accion,\n    fc: 6,           // Escribir un solo registro (Preset Single Register)\n    unitid: 1,       // ID del esclavo Modbus\n    address: 3,      // Dirección 3 = Registro 4\n    quantity: 1\n};\n\n// Preparamos la respuesta de éxito para la App\nmsg.payload = { \n    status: \"ok\", \n    message: accion === 1 ? \"Cerradura Abierta\" : \"Cerradura Bloqueada\" \n};\n\n// 5. Salidas: \n// [Respuesta HTTP para la App, Orden para el PLC Modbus]\nreturn [msg, { payload: ordenModbus }];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 1620,
+        "wires": [
+            [
+                "a21b82d8a959f58c"
+            ],
+            [
+                "0a2e29cbd4296009"
+            ]
+        ]
+    },
+    {
+        "id": "a21b82d8a959f58c",
+        "type": "http response",
+        "z": "dac709a230677496",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 590,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "7535f3012d318377",
+        "type": "http response",
+        "z": "dac709a230677496",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 830,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "492aa3e613d50799",
+        "type": "http response",
+        "z": "dac709a230677496",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 810,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "37ddcf71bc8ac335",
+        "type": "http response",
+        "z": "dac709a230677496",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 990,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "7b58f8c2fcddbcb0",
+        "type": "function",
+        "z": "dac709a230677496",
+        "name": "estado alarma",
+        "func": "// Forzamos la acción a 1 (Armar)\nlet accion = 1;\n\n// Salida 1: Respuesta inmediata para Flutter (Pone el SnackBar VERDE)\nmsg.payload = { status: \"ok\", message: \"Alarma Armada\" };\n\n// Salida 2: Configuración Modbus\nconst ordenModbus = {\n    value: accion,\n    fc: 6,\n    unitid: 1,\n    address: 0, // Ajusta a tu registro de alarma\n    quantity: 1\n};\n\nreturn [msg, { payload: ordenModbus }];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 1360,
+        "wires": [
+            [
+                "7535f3012d318377"
+            ],
+            [
+                "8cae78f3dc8d9705"
+            ]
+        ]
+    },
+    {
+        "id": "47e7657f3ed4b807",
+        "type": "function",
+        "z": "dac709a230677496",
+        "name": "desarmar",
+        "func": "// Forzamos la acción a 0 (Desarmar)\nlet accion = 0;\n\n// Salida 1: Respuesta para Flutter\nmsg.payload = { status: \"ok\", message: \"Alarma Desactivada\" };\n\n// Salida 2: Configuración Modbus\nconst ordenModbus = {\n    value: accion,\n    fc: 6,\n    unitid: 1,\n    address: 0, \n    quantity: 1\n};\n\nreturn [msg, { payload: ordenModbus }];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 1460,
+        "wires": [
+            [
+                "492aa3e613d50799"
+            ],
+            [
+                "f3fc6c3aee0f15bc"
+            ]
+        ]
+    },
+    {
+        "id": "f3b04a85d7207762",
+        "type": "trigger",
+        "z": "dac709a230677496",
+        "name": "espera 3 s",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "3",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 730,
+        "y": 1280,
+        "wires": [
+            [
+                "37ddcf71bc8ac335",
+                "eed032409c1459a7"
+            ]
+        ]
     }
 ]

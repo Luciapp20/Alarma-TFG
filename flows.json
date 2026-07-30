@@ -1601,76 +1601,6 @@
         ]
     },
     {
-        "id": "54fc63fb591f551d",
-        "type": "http in",
-        "z": "dac709a230677496",
-        "name": "abrir",
-        "url": "/abrir",
-        "method": "get",
-        "upload": false,
-        "skipBodyParsing": false,
-        "swaggerDoc": "",
-        "x": 170,
-        "y": 1260,
-        "wires": [
-            [
-                "051b8eb374811236"
-            ]
-        ]
-    },
-    {
-        "id": "051b8eb374811236",
-        "type": "change",
-        "z": "dac709a230677496",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "1",
-                "tot": "num"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 400,
-        "y": 1260,
-        "wires": [
-            [
-                "37ddcf71bc8ac335",
-                "f3b04a85d7207762"
-            ]
-        ]
-    },
-    {
-        "id": "eed032409c1459a7",
-        "type": "modbus-write",
-        "z": "dac709a230677496",
-        "name": "abrir puerta",
-        "showStatusActivities": false,
-        "showErrors": false,
-        "showWarnings": true,
-        "unitid": "",
-        "dataType": "HoldingRegister",
-        "adr": "3",
-        "quantity": "1",
-        "server": "d24ebb0dd36dcc53",
-        "emptyMsgOnFail": false,
-        "keepMsgProperties": false,
-        "delayOnStart": false,
-        "startDelayTime": "",
-        "x": 950,
-        "y": 1280,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
         "id": "536c64122ed016f4",
         "type": "http in",
         "z": "dac709a230677496",
@@ -1987,17 +1917,6 @@
         "wires": []
     },
     {
-        "id": "37ddcf71bc8ac335",
-        "type": "http response",
-        "z": "dac709a230677496",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 990,
-        "y": 1220,
-        "wires": []
-    },
-    {
         "id": "7b58f8c2fcddbcb0",
         "type": "function",
         "z": "dac709a230677496",
@@ -2040,32 +1959,6 @@
             ],
             [
                 "f3fc6c3aee0f15bc"
-            ]
-        ]
-    },
-    {
-        "id": "f3b04a85d7207762",
-        "type": "trigger",
-        "z": "dac709a230677496",
-        "name": "espera 3 s",
-        "op1": "1",
-        "op2": "0",
-        "op1type": "str",
-        "op2type": "str",
-        "duration": "3",
-        "extend": true,
-        "overrideDelay": false,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 730,
-        "y": 1280,
-        "wires": [
-            [
-                "37ddcf71bc8ac335",
-                "eed032409c1459a7"
             ]
         ]
     }

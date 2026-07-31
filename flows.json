@@ -332,6 +332,16 @@
                 "name": "MODBUS_HOST",
                 "value": "127.0.0.1",
                 "type": "str"
+            },
+            {
+                "name": "REGISTRO_CSV_PATH",
+                "value": "C:\\Users\\pardo\\Desktop\\tfg\\registro.csv",
+                "type": "str"
+            },
+            {
+                "name": "LATENCIAS_CSV_PATH",
+                "value": "C:\\Users\\pardo\\Desktop\\tfg\\latencias.csv",
+                "type": "str"
             }
         ],
         "modules": {}
@@ -917,13 +927,13 @@
         "type": "file",
         "z": "dac709a230677496",
         "name": "",
-        "filename": "C:\\Users\\pardo\\Desktop\\tfg\\registro.csv",
+        "filename": "$(REGISTRO_CSV_PATH)",
         "filenameType": "str",
         "appendNewline": false,
         "createDir": false,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 1200,
+        "x": 1160,
         "y": 60,
         "wires": [
             []
@@ -2007,13 +2017,13 @@
         "type": "file",
         "z": "dac709a230677496",
         "name": "",
-        "filename": "C:\\Users\\pardo\\Desktop\\tfg\\latencias.csv",
+        "filename": "$(LATENCIAS_CSV_PATH)",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 1320,
+        "x": 1280,
         "y": 460,
         "wires": [
             []

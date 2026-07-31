@@ -171,7 +171,7 @@
         "stateLogEnabled": false,
         "queueLogEnabled": false,
         "failureLogEnabled": true,
-        "tcpHost": "127.0.0.1",
+        "tcpHost": "$(MODBUS_HOST)",
         "tcpPort": 502,
         "tcpType": "DEFAULT",
         "serialPort": "/dev/ttyUSB",
@@ -320,6 +320,23 @@
         "groupType": "default"
     },
     {
+        "id": "14411dce2f2efac7",
+        "type": "global-config",
+        "env": [
+            {
+                "name": "TELEGRAM_CHAT_ID",
+                "value": "643121614",
+                "type": "str"
+            },
+            {
+                "name": "MODBUS_HOST",
+                "value": "127.0.0.1",
+                "type": "str"
+            }
+        ],
+        "modules": {}
+    },
+    {
         "id": "2118c22d23c19838",
         "type": "modbus-read",
         "z": "dac709a230677496",
@@ -361,7 +378,7 @@
         "type": "function",
         "z": "dac709a230677496",
         "name": "Lógica de Intrusion Central",
-        "func": "// --- 1. Lectura de variables globales ---\nconst armado = global.get(\"val_registro_0\") || 0;\nconst s1 = global.get(\"val_registro_1\") || 0;\nconst s2 = global.get(\"val_registro_4\") || 0;\n\n// --- 2. Lógica de Alerta Unificada ---\nlet valorSirena = 0;\nlet mensajeTelegram = null;\nlet zonaDetectada = \"\";\n\nif (armado === 1) {\n    if (s1 === 1) zonaDetectada = \"Puerta Principal (Z1)\";\n    if (s2 === 1) zonaDetectada = (zonaDetectada === \"\") ? \"Célula Robótica (Z2)\" : \"Z1 y Z2\";\n\n    if (zonaDetectada !== \"\") {\n        valorSirena = 1;\n        mensajeTelegram = {\n            payload: {\n                chatId: 643121614,\n                type: 'message',\n                content: `🚨 ALERTA DE SEGURIDAD: Intrusión detectada en ${zonaDetectada}. Sirena activa.`\n            }\n        };\n    }\n}\n\n// --- 3. Paquete para escribir en el Registro 2 (Sirena) ---\nconst ordenPLC = {\n    value: valorSirena,\n    fc: 6,\n    unitid: 1,\n    address: 2,\n    quantity: 1\n};\n\nreturn [mensajeTelegram, { payload: ordenPLC }];",
+        "func": "// --- 1. Lectura de variables globales ---\nconst armado = global.get(\"val_registro_0\") || 0;\nconst s1 = global.get(\"val_registro_1\") || 0;\nconst s2 = global.get(\"val_registro_4\") || 0;\n\nconst chatId = env.get(\"TELEGRAM_CHAT_ID\");\n\n// --- 2. Lógica de Alerta Unificada ---\nlet valorSirena = 0;\nlet mensajeTelegram = null;\nlet zonaDetectada = \"\";\n\nif (armado === 1) {\n    if (s1 === 1) zonaDetectada = \"Puerta Principal (Z1)\";\n    if (s2 === 1) zonaDetectada = (zonaDetectada === \"\") ? \"Célula Robótica (Z2)\" : \"Z1 y Z2\";\n\n    if (zonaDetectada !== \"\") {\n        valorSirena = 1;\n        mensajeTelegram = {\n            t0: Date.now(), //detección\n            payload: {\n                chatId: chatId,\n                type: 'message',\n                content: `🚨 ALERTA DE SEGURIDAD: Intrusión detectada en ${zonaDetectada}. Sirena activa.`\n            }\n        };\n    }\n}\n\n// --- 3. Paquete para escribir en el Registro 2 (Sirena) ---\nconst ordenPLC = {\n    value: valorSirena,\n    fc: 6,\n    unitid: 1,\n    address: 2,\n    quantity: 1\n};\n\nreturn [mensajeTelegram, { payload: ordenPLC }];",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -373,7 +390,7 @@
         "wires": [
             [
                 "96753cc38a15b691",
-                "4eeaa34e1520e57f"
+                "2a121c8269a04a6d"
             ],
             [
                 "ee9adb7b3937540e",
@@ -1960,6 +1977,46 @@
             [
                 "f3fc6c3aee0f15bc"
             ]
+        ]
+    },
+    {
+        "id": "2a121c8269a04a6d",
+        "type": "function",
+        "z": "dac709a230677496",
+        "name": "medir latencia",
+        "func": "const t1 = Date.now();\nconst latencia_ms = t1 - msg.t0;\n\n// Guardamos la latencia en un mensaje aparte para el fichero CSV\nconst registro = {\n    payload: new Date().toISOString() + \";\" + latencia_ms + \"\\n\"\n};\n\n// devolvemos el mensaje original (para que siga a Telegram) \n// y el registro de latencia (para guardarlo en fichero) por dos salidas\nreturn [msg, registro];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 300,
+        "wires": [
+            [
+                "4eeaa34e1520e57f"
+            ],
+            [
+                "5fc26ccb856286e7"
+            ]
+        ]
+    },
+    {
+        "id": "5fc26ccb856286e7",
+        "type": "file",
+        "z": "dac709a230677496",
+        "name": "",
+        "filename": "C:\\Users\\pardo\\Desktop\\tfg\\latencias.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1320,
+        "y": 460,
+        "wires": [
+            []
         ]
     }
 ]

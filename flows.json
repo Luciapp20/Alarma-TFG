@@ -1206,8 +1206,8 @@
         "headers": {
             "Content-Disposition": "attachment; filename=historial.csv"
         },
-        "x": 1110,
-        "y": 860,
+        "x": 1330,
+        "y": 840,
         "wires": []
     },
     {
@@ -1229,7 +1229,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 930,
+        "x": 1090,
         "y": 860,
         "wires": [
             [
@@ -1785,7 +1785,7 @@
         "y": 800,
         "wires": [
             [
-                "050dda36b30bc7d2"
+                "30c56bdee1c8a261"
             ]
         ]
     },
@@ -1796,7 +1796,7 @@
         "name": "Enviar a la app",
         "statusCode": "",
         "headers": {},
-        "x": 820,
+        "x": 1020,
         "y": 820,
         "wires": []
     },
@@ -2027,6 +2027,26 @@
         "y": 460,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "30c56bdee1c8a261",
+        "type": "function",
+        "z": "dac709a230677496",
+        "name": "arreglar csv",
+        "func": "let lineas = [];\n\nif (Array.isArray(msg.payload) && msg.payload.length > 0) {\n    // la clave del primer objeto es en realidad la primera linea real del csv\n    lineas.push(Object.keys(msg.payload[0])[0]);\n\n    // el valor de cada objeto es la linea correcta\n    msg.payload.forEach(obj => {\n        lineas.push(Object.values(obj)[0]);\n    });\n\n    msg.payload = lineas.join('\\n');\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 820,
+        "wires": [
+            [
+                "050dda36b30bc7d2"
+            ]
         ]
     }
 ]

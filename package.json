@@ -1,6 +1,6 @@
 {
     "name": "alarmaCasa",
-    "description": "Simulación alarma doméstica",
+    "description": "TFG_Sistema_Alarma",
     "version": "0.0.1",
     "dependencies": {},
     "node-red": {
